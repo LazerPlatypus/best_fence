@@ -3,7 +3,7 @@
 
 To use, add the following lines to the beginning of your file:
 
-    include <models/attachment_screw.scad>;
+    include <libs/attachment_screw.scad>;
 
 ## File Contents
 
@@ -17,12 +17,12 @@ To use, add the following lines to the beginning of your file:
 
 A simple screw mount for the Best Fence, used to attach the mount to the
 saw stand. This module creates a 2x2 group of screws using variables in config.scad
-This should be the first child of the [mount](models/mount.scad#module-mount) module with `mounting_face` set to "TOP"
+This should be the first child of the [mount](models/mount.scad) module with `mounting_face` set to "TOP"
 
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <models/attachment_screw.scad>;
+include <libs/attachment_screw.scad>;
 attachment_screw();
 ```
 
@@ -34,13 +34,13 @@ attachment_screw();
 
 **Description:** 
 
-A simple screw for holding the Best Fence, used by the [attachment\_screw](#module-attachment_screw)
+A simple screw for holding the Best Fence, used by the [attachment_screw](libs/attachment_screw.scad)
 This module creates a simple screw with a tapered head and no threads.
 
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <models/attachment_screw.scad>;
+include <libs/attachment_screw.scad>;
 screw();
 ```
 

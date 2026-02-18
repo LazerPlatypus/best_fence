@@ -2,10 +2,10 @@
 //   This part interfaces with the BestFence system
 //   It has slots for channels and a blind hole for a "helping hand" arm
 // Includes:
-//   include <models/mount.scad>;
+//   include <libs/mount.scad>;
 
 include <../config.scad>;
-include <coord_kit/core.scad>;
+include <../deps/coord_kit/core.scad>;
 
 // Module: mount
 // Usage:

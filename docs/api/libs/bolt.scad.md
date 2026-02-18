@@ -1,10 +1,10 @@
 # File: bolt.scad
 
-A simple bolt component for holding the Best Fence, used by the [toe\_clamp\_body](models/toe_clamp_body.scad#module-toe_clamp_body)
+A simple bolt component for holding the Best Fence, used by the [toe_clamp_body](models/toe_clamp_body.scad)
 
 To use, add the following lines to the beginning of your file:
 
-    include <models/bolt.scad>;
+    include <libs/bolt.scad>;
 
 ## File Contents
 
@@ -15,13 +15,13 @@ To use, add the following lines to the beginning of your file:
 
 **Description:** 
 
-A simple bolt for holding the Best Fence, used by the [toe\_clamp\_body](models/toe_clamp_body.scad#module-toe_clamp_body)
+A simple bolt for holding the Best Fence, used by the [toe_clamp_body](models/toe_clamp_body.scad)
 This module creates a simple bolt with a hex head and no threads.
 
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <models/bolt.scad>;
+include <libs/bolt.scad>;
 bolt();
 ```
 

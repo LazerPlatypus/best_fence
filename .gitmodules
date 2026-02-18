@@ -1,0 +1,3 @@
+[submodule "deps/coord_kit"]
+	path = deps/coord_kit
+	url = https://github.com/LazerPlatypus/coord_kit.git

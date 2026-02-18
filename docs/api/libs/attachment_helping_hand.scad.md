@@ -3,7 +3,7 @@
 
 To use, add the following lines to the beginning of your file:
 
-    include <models/attachment_helping_hand.scad>;
+    include <libs/attachment_helping_hand.scad>;
 
 ## File Contents
 
@@ -15,13 +15,13 @@ To use, add the following lines to the beginning of your file:
 **Description:** 
 
 A cylindar the same size as the head of the "Helping Hand"
-should be used as the first child of the [mount](models/mount.scad#module-mount) module, with `mounting_face` set to "BOTTOM"
+should be used as the first child of the [mount](models/mount.scad) module, with `mounting_face` set to "BOTTOM"
 derives its dimensions from the variables in config.scad
 
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <models/attachment_helping_hand.scad>;
+include <libs/attachment_helping_hand.scad>;
 attachment_helping_hand();
 ```
 
