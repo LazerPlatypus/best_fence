@@ -21,6 +21,10 @@ To use, add the following lines to the beginning of your file:
 
 - mount(num_channels=2, channel_spacing=20);
 
+**Usage:** 
+
+- mount(num_channels=2, channel_spacing=20) { <attachment_geometry>; <channel_geometry> }
+
 **Description:** 
 
 Creates a mount for the BestFence system with specified number of channels and spacing.

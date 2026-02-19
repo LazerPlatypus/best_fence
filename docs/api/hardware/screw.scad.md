@@ -12,6 +12,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: screw
 
+**Usage:** 
+
+- screw();
+
 **Description:** 
 
 A simple screw for holding the Best Fence, used by the [attachment_screw](tools/attachment_screw.scad)

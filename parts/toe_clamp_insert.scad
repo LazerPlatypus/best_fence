@@ -17,6 +17,8 @@ include <../config.scad>;
 ///  meaning all children should be centered about 0,0; with the highest point slightly above 0,0,0 (to allow for a clean cut). 
 //   .
 //   The insert is designed to be made from a hard material like PLA or PETG for durability.
+// Usage:
+//   toe_clamp_insert() { <bolt>; }
 // Example(3D,Render):
 //   use <hardware/bolt.scad>;
 //   include <config.scad>;

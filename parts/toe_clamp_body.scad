@@ -15,6 +15,8 @@ include <../config.scad>;
 //   This module is centered around 0,0,0, meaning all children should be centered about 0,0,0 as well.
 //   to secure the clamp to the fence. The clamp body is designed to fit snugly around the insert and provide a secure hold on the fence.
 //   it is recommended to make the body from a rubbery/grippy material like TPU
+// Usage:
+//   toe_clamp_body() { <toe_clamp_insert (optional)>; }
 // Example(3D,Render):
 //   use <parts/toe_clamp_insert.scad>;
 //   use <hardware/bolt.scad>;

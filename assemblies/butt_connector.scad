@@ -9,6 +9,8 @@ include <../config.scad>;
 
 // Module: butt_connector_assembly
 // Description: This module assembles the butt connector by combining the toe clamp body, toe clamp insert, and bolts in the correct orientation and position.
+// Usage:
+//   butt_connector_assembly();
 // Example(3D,Render):
 //   -- EXPORT_MODE = false;
 //   butt_connector_assembly();

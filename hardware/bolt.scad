@@ -8,6 +8,8 @@ include <../config.scad>;
 // Module: bolt
 // Description: A simple bolt for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)
 //   This module creates a simple bolt with a hex head and no threads.
+// Usage:
+//   bolt();
 // Example(3D,Render):
 //   bolt();
 module bolt() {

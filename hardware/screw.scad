@@ -9,6 +9,8 @@ include <../config.scad>;
 // Module: screw
 // Description: A simple screw for holding the Best Fence, used by the [attachment_screw](tools/attachment_screw.scad)
 //   This module creates a simple screw with a tapered head and no threads.
+// Usage:
+//   screw();
 // Example(3D,Render):
 //   screw();
 module screw() {

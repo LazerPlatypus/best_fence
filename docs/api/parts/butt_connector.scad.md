@@ -13,6 +13,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: butt\_connector
 
+**Usage:** 
+
+- butt_connector(){ <toe_clamp (optional)>; }
+
 **Description:** 
 
 A simple connector for attaching two pieces of Best Fence together

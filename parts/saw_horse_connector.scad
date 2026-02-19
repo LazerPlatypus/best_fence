@@ -13,6 +13,8 @@ include <../config.scad>;
 
 // Module: saw_horse_connector
 // Description: A simple connector for attaching the Best Fence to a saw horse
+// Usage:
+//   saw_horse_connector() { <toe_clamp (optional)>; }
 // Example(3D,Render): Exported Geometry
 //   saw_horse_connector();
 module saw_horse_connector() {

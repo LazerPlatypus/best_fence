@@ -17,6 +17,8 @@ include <../deps/coord_kit/core.scad>;
 //   .
 //   use children to add additional geometry to the mount. first child should be the attachment mechanism, the second child will
 //   be duplicated in each `channel` slot.
+// Usage:
+//   mount(num_channels=2, channel_spacing=20) { <attachment_geometry>; <channel_geometry> }
 // Arguments:
 //   num_channels = `number` Number of channels to include in the mount (default: 2)
 //   channel_spacing = `number` Spacing between channels in mm (default: 20)

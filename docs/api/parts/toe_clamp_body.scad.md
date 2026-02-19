@@ -15,6 +15,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: toe\_clamp\_body
 
+**Usage:** 
+
+- toe_clamp_body() { <toe_clamp_insert (optional)>; }
+
 **Description:** 
 
 A simple toe clamp for holding the Best Fence

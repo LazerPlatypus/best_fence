@@ -12,6 +12,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: attachment\_screw
 
+**Usage:** 
+
+- attachment_screw();
+
 **Description:** 
 
 A simple screw mount for the Best Fence, used to attach the mount to the

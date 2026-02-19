@@ -14,6 +14,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: butt\_connector\_assembly
 
+**Usage:** 
+
+- butt_connector_assembly();
+
 **Description:** 
 
 This module assembles the butt connector by combining the toe clamp body, toe clamp insert, and bolts in the correct orientation and position.

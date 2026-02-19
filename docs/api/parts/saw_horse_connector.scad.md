@@ -13,6 +13,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: saw\_horse\_connector
 
+**Usage:** 
+
+- saw_horse_connector() { <toe_clamp (optional)>; }
+
 **Description:** 
 
 A simple connector for attaching the Best Fence to a saw horse

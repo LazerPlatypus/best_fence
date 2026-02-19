@@ -10,6 +10,8 @@ include <../config.scad>;
 // Description: A cylindar the same size as the head of the "Helping Hand"
 //   should be used as the first child of the [mount](parts/mount.scad) module, with `mounting_face` set to "BOTTOM"
 //   derives its dimensions from the variables in config.scad
+// Usage:
+//   attachment_helping_hand();
 // Example(3D):
 //   attachment_helping_hand();
 module attachment_helping_hand() {

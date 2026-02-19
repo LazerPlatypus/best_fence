@@ -13,6 +13,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: toe\_clamp\_insert
 
+**Usage:** 
+
+- toe_clamp_insert() { <bolt>; }
+
 **Description:** 
 
 A simple toe clamp insert for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)

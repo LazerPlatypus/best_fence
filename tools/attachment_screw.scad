@@ -10,6 +10,8 @@ include <../config.scad>;
 // Description: A simple screw mount for the Best Fence, used to attach the mount to the
 //   saw stand. This module creates a 2x2 group of screws using variables in config.scad
 //   This should be the first child of the [mount](parts/mount.scad) module with `mounting_face` set to "TOP"
+// Usage:
+//   attachment_screw();
 // Example(3D):
 //   attachment_screw();
 module attachment_screw() {

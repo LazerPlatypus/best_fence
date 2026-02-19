@@ -13,6 +13,8 @@ include <../config.scad>;
 
 // Module: butt_connector
 // Description: A simple connector for attaching two pieces of Best Fence together
+// Usage:
+//   butt_connector(){ <toe_clamp (optional)>; }
 // Example(3D,Render): Exported Geometry
 //   butt_connector();
 module butt_connector() {

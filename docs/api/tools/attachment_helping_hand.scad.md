@@ -12,6 +12,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: attachment\_helping\_hand
 
+**Usage:** 
+
+- attachment_helping_hand();
+
 **Description:** 
 
 A cylindar the same size as the head of the "Helping Hand"

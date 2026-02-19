@@ -13,6 +13,10 @@ To use, add the following lines to the beginning of your file:
 
 ### Module: bolt
 
+**Usage:** 
+
+- bolt();
+
 **Description:** 
 
 A simple bolt for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)
