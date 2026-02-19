@@ -6,7 +6,7 @@ set -e
 
 VENV_DIR=".venv"
 DOCS_DIR="docs/api"
-DIRS="hardware,parts,tools"
+DIRS="assemblies,hardware,parts,tools"
 
 # Find openscad-docsgen (venv first, then system)
 if [ -x "$VENV_DIR/bin/openscad-docsgen" ]; then

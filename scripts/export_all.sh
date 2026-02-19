@@ -25,9 +25,7 @@ echo "Exporting all parts from $PARTS_DIR/"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 
-# Export each part (excluding lib & consts files)
-
-# parts dir
+# Export each part file
 for part in "$PARTS_DIR"/*.scad; do
     # Skip if no files found
     [ -f "$part" ] || continue

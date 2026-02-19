@@ -9,6 +9,17 @@ VENV_DIR=".venv"
 echo "Setting up best_fence development environment..."
 echo ""
 
+# init submodules
+if [ -f ".gitmodules" ]; then
+    echo "Initializing git submodules..."
+    git submodule update --init --recursive
+    echo "✓ Git submodules initialized"
+    echo ""
+else
+    echo "No .gitmodules file found, skipping submodule initialization"
+    echo ""
+fi
+
 # Check if OpenSCAD is installed
 if ! command -v openscad &> /dev/null; then
     echo "❌ OpenSCAD not found in PATH"

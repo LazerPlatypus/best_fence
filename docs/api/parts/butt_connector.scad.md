@@ -26,41 +26,5 @@ butt_connector();
 
 ![butt\_connector Example 1](images/butt_connector/butt_connector.png "butt\_connector Example 1")
 
-**Example 2:** Full Assembly
-
-``` {.C linenos=True}
-include <parts/butt_connector.scad>;
-butt_connector() {
-    union() {
-        rotate([0, 0, 180]) {
-            color("blue") {
-                toe_clamp_body(){
-                    translate([0, 0, EPSILON]) {
-                        bolt();
-                        toe_clamp_insert() {
-                            translate([0, 0, EPSILON]) {
-                                bolt();
-                            }
-                        }
-                    }
-                }
-            }
-            color("white") {
-                toe_clamp_insert() {
-                    translate([0, 0, EPSILON]) {
-                        bolt();
-                    }
-                }
-            }
-            color("black") {
-                bolt();
-            }
-        }
-    }
-}
-```
-
-![butt\_connector Example 2](images/butt_connector/butt_connector_2.png "butt\_connector Example 2")
-
 ---
 
