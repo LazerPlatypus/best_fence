@@ -1,7 +1,7 @@
 // File: butt_connector.scad
 //   A simple connector for attaching two pieces of Best Fence together
 // Includes:
-//   include <parts/butt_connector.scad>;
+//   use <parts/butt_connector.scad>;
 
 use <../tools/attachment_helping_hand.scad>;
 use <../tools/mount.scad>;
@@ -28,6 +28,4 @@ module butt_connector() {
     }
 }
 
-if (EXPORT_MODE) {
-    butt_connector();
-}
+butt_connector();

@@ -26,14 +26,13 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # Export each part file
-for part in "$PARTS_DIR"/*.scad; do
-    # Skip if no files found
-    [ -f "$part" ] || continue
-
-    basename=$(basename "$part" .scad)
+while IFS= read -r part; do
+    rel="${part#"$PARTS_DIR"/}"
+    basename="${rel%.scad}"
 
     PART_COUNT=$((PART_COUNT + 1))
     output="$OUTPUT_DIR/$basename.stl"
+    mkdir -p "$(dirname "$output")"
 
     echo "[$PART_COUNT] Exporting $basename..."
 
@@ -46,7 +45,7 @@ for part in "$PARTS_DIR"/*.scad; do
     fi
 
     echo ""
-done
+done < <(find "$PARTS_DIR" -name "*.scad")
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Export Summary"

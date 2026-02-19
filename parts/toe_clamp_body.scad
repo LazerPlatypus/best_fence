@@ -1,7 +1,7 @@
 // File: toe_clamp_body.scad
 //   A simple toe clamp component for holding the Best Fence
 // Includes:
-//   include <parts/toe_clamp_body.scad>;
+//   use <parts/toe_clamp_body.scad>;
 
 use <../deps/coord_kit/core.scad>;
 use <../hardware/bolt.scad>;
@@ -16,6 +16,9 @@ include <../config.scad>;
 //   to secure the clamp to the fence. The clamp body is designed to fit snugly around the insert and provide a secure hold on the fence.
 //   it is recommended to make the body from a rubbery/grippy material like TPU
 // Example(3D,Render):
+//   use <parts/toe_clamp_insert.scad>;
+//   use <hardware/bolt.scad>;
+//   include <config.scad>;
 //   toe_clamp_body() {
 //     translate([0, 0, EPSILON]) {
 //       bolt();
@@ -43,6 +46,7 @@ module toe_clamp_body() {
 // Status: INTERNAL
 // Description: Calculates the points for the toe clamp body geometry based on global variables
 // Example(2D):
+//   use <deps/coord_kit/core.scad>;
 //   polygon(points_to_coords(_calculate_toe_clamp_body_points()));
 function _calculate_toe_clamp_body_points() =
     [
@@ -69,14 +73,12 @@ function _calculate_toe_clamp_body_points() =
 function _calculate_center_x_toe_clamp_body(toe_clamp_points) =
     (toe_clamp_points[0][0] + toe_clamp_points[2][0]) / 2;
 
-if (EXPORT_MODE) {
-    toe_clamp_body() {
-        translate([0, 0, EPSILON]) {
-            bolt();
-            toe_clamp_insert() {
-                translate([0, 0, EPSILON]) {
-                    bolt();
-                }
+toe_clamp_body() {
+    translate([0, 0, EPSILON]) {
+        bolt();
+        toe_clamp_insert() {
+            translate([0, 0, EPSILON]) {
+                bolt();
             }
         }
     }

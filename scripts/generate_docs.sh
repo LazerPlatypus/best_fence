@@ -31,8 +31,11 @@ mkdir -p "$DOCS_DIR"
 
 IFS=',' read -ra DIR_LIST <<< "$DIRS"
 for dir in "${DIR_LIST[@]}"; do
-    if [ -d "$dir" ] && ls "$dir"/*.scad 1> /dev/null 2>&1; then
-        $DOCSGEN -m "$dir"/*.scad --force
+    if [ -d "$dir" ]; then
+        mapfile -t scad_files < <(find "$dir" -name "*.scad")
+        if [ ${#scad_files[@]} -gt 0 ]; then
+            $DOCSGEN -m "${scad_files[@]}" --force
+        fi
     fi
 done
 

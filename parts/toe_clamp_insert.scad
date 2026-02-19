@@ -1,7 +1,7 @@
 // File: toe_clamp_insert.scad
 //   A simple toe clamp component for holding the Best Fence
 // Includes:
-//   include <parts/toe_clamp_insert.scad>;
+//   use <parts/toe_clamp_insert.scad>;
 
 use <../hardware/bolt.scad>;
 
@@ -18,6 +18,8 @@ include <../config.scad>;
 //   .
 //   The insert is designed to be made from a hard material like PLA or PETG for durability.
 // Example(3D,Render):
+//   use <hardware/bolt.scad>;
+//   include <config.scad>;
 //   toe_clamp_insert() {
 //     translate([0, 0, EPSILON]) {
 //       bolt();
@@ -32,10 +34,8 @@ module toe_clamp_insert() {
     }
 }
 
-if (EXPORT_MODE) {
-    toe_clamp_insert() {
-        translate([0, 0, EPSILON]) {
-            bolt();
-        }
+toe_clamp_insert() {
+    translate([0, 0, EPSILON]) {
+        bolt();
     }
 }

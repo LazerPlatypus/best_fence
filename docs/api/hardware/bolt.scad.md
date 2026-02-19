@@ -4,7 +4,7 @@ A simple bolt component for holding the Best Fence, used by the [toe_clamp_body]
 
 To use, add the following lines to the beginning of your file:
 
-    include <hardware/bolt.scad>;
+    use <hardware/bolt.scad>;
 
 ## File Contents
 
@@ -21,7 +21,7 @@ This module creates a simple bolt with a hex head and no threads.
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <hardware/bolt.scad>;
+use <hardware/bolt.scad>;
 bolt();
 ```
 

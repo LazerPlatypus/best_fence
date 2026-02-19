@@ -4,7 +4,7 @@ A simple connector for attaching the Best Fence to a saw horse
 
 To use, add the following lines to the beginning of your file:
 
-    include <parts/saw_horse_connector.scad>;
+    use <parts/saw_horse_connector.scad>;
 
 ## File Contents
 
@@ -20,7 +20,7 @@ A simple connector for attaching the Best Fence to a saw horse
 **Example 1:** Exported Geometry
 
 ``` {.C linenos=True}
-include <parts/saw_horse_connector.scad>;
+use <parts/saw_horse_connector.scad>;
 saw_horse_connector();
 ```
 

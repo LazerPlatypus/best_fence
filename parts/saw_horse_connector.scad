@@ -1,7 +1,7 @@
 // File: saw_horse_connector.scad
 //   A simple connector for attaching the Best Fence to a saw horse
 // Includes:
-//   include <parts/saw_horse_connector.scad>;
+//   use <parts/saw_horse_connector.scad>;
 
 use <../tools/attachment_screw.scad>;
 use <../tools/mount.scad>;
@@ -28,6 +28,4 @@ module saw_horse_connector() {
     }
 }
 
-if (EXPORT_MODE) {
-    saw_horse_connector();
-}
+saw_horse_connector();

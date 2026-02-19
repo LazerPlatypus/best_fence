@@ -28,4 +28,3 @@ GenerateDocs: Files, ToC, Index, Topics, CheatSheet
 # Exclude dependencies, assemblies and examples
 IgnoreFiles:
   deps/*
-  previews/*

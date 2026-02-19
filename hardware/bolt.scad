@@ -1,7 +1,7 @@
 // File: bolt.scad
 //  A simple bolt component for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)
 // Includes:
-//   include <hardware/bolt.scad>;
+//   use <hardware/bolt.scad>;
 
 include <../config.scad>;
 
@@ -22,3 +22,5 @@ module bolt() {
         }
     }
 }
+
+bolt();

@@ -4,7 +4,7 @@ A simple toe clamp component for holding the Best Fence
 
 To use, add the following lines to the beginning of your file:
 
-    include <parts/toe_clamp_insert.scad>;
+    use <parts/toe_clamp_insert.scad>;
 
 ## File Contents
 
@@ -25,7 +25,9 @@ The insert is designed to be centered around 0,0, with the highest point at 0,0,
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <parts/toe_clamp_insert.scad>;
+use <parts/toe_clamp_insert.scad>;
+use <hardware/bolt.scad>;
+include <config.scad>;
 toe_clamp_insert() {
   translate([0, 0, EPSILON]) {
     bolt();

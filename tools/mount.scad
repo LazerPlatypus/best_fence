@@ -2,7 +2,7 @@
 //   This part interfaces with the BestFence system
 //   It has slots for channels and a blind hole for a "helping hand" arm
 // Includes:
-//   include <tools/mount.scad>;
+//   use <tools/mount.scad>;
 
 include <../config.scad>;
 include <../deps/coord_kit/core.scad>;
@@ -190,6 +190,7 @@ function _validate_args_mount(num_channels, channel_spacing, mounting_face) =
 // Status: INTERNAL
 // Description: Calculates the points for the support geometry based on global variables
 // Example(2D):
+//   use <deps/coord_kit/core.scad>;
 //   polygon(points_to_coords(_calculate_support_points()));
 function _calculate_support_points() =
     [
@@ -260,6 +261,7 @@ function _calculate_support_points() =
 // Status: INTERNAL
 // Description: Calculates the points for the channel geometry based on global variables
 // Example(2D):
+//   use <deps/coord_kit/core.scad>;
 //   polygon(points_to_coords(_calculate_channel_points()));
 function _calculate_channel_points() =
     [
@@ -329,6 +331,4 @@ function _calculate_channel_points() =
         ]
     ];
 
-// Export Mode
-// we don't export this on it's own. Rather, use previews/* to export
-// the different versions of this model
+mount();

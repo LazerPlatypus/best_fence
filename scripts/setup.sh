@@ -23,7 +23,7 @@ fi
 # Check if OpenSCAD is installed
 if ! command -v openscad &> /dev/null; then
     echo "❌ OpenSCAD not found in PATH"
-    echo "   Install from: https://openscad.org/"
+    echo "   Install snapshot from: https://openscad.org/"
     exit 1
 fi
 echo "✓ OpenSCAD found: $(openscad --version 2>&1 | head -1)"

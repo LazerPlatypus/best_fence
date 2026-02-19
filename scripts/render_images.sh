@@ -33,14 +33,13 @@ echo ""
 
 IMAGE_COUNT=0
 
-for scad_file in "$ASSEMBLIES_DIR"/*.scad; do
-    # Skip if no files found
-    [ -f "$scad_file" ] || continue
-
-    basename=$(basename "$scad_file" .scad)
+while IFS= read -r scad_file; do
+    rel="${scad_file#"$ASSEMBLIES_DIR"/}"
+    basename="${rel%.scad}"
 
     IMAGE_COUNT=$((IMAGE_COUNT + 1))
     output="$OUTPUT_DIR/$basename.png"
+    mkdir -p "$(dirname "$output")"
 
     echo "[$IMAGE_COUNT] Rendering $basename.png..."
 
@@ -54,7 +53,7 @@ for scad_file in "$ASSEMBLIES_DIR"/*.scad; do
 
     echo "  ✓ Done"
     echo ""
-done
+done < <(find "$ASSEMBLIES_DIR" -name "*.scad")
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "✓ Rendered $IMAGE_COUNT images to $OUTPUT_DIR/"

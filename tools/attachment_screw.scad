@@ -1,7 +1,7 @@
 // File: attachment_screw.scad
 // A screw mount for the Best Fence mount, used to attach the mount to the saw stand
 // Includes:
-//   include <tools/attachment_screw.scad>;
+//   use <tools/attachment_screw.scad>;
 
 use <../hardware/screw.scad>;
 include <../config.scad>;
@@ -37,3 +37,5 @@ module attachment_screw() {
         screw();
     }
 }
+
+attachment_screw();

@@ -3,7 +3,7 @@
 
 To use, add the following lines to the beginning of your file:
 
-    include <hardware/screw.scad>;
+    use <hardware/screw.scad>;
 
 ## File Contents
 
@@ -20,7 +20,7 @@ This module creates a simple screw with a tapered head and no threads.
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <hardware/screw.scad>;
+use <hardware/screw.scad>;
 screw();
 ```
 

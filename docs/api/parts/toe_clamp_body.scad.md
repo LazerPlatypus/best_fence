@@ -4,7 +4,7 @@ A simple toe clamp component for holding the Best Fence
 
 To use, add the following lines to the beginning of your file:
 
-    include <parts/toe_clamp_body.scad>;
+    use <parts/toe_clamp_body.scad>;
 
 ## File Contents
 
@@ -26,7 +26,10 @@ it is recommended to make the body from a rubbery/grippy material like TPU
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <parts/toe_clamp_body.scad>;
+use <parts/toe_clamp_body.scad>;
+use <parts/toe_clamp_insert.scad>;
+use <hardware/bolt.scad>;
+include <config.scad>;
 toe_clamp_body() {
   translate([0, 0, EPSILON]) {
     bolt();
@@ -55,7 +58,8 @@ Calculates the points for the toe clamp body geometry based on global variables
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <parts/toe_clamp_body.scad>;
+use <parts/toe_clamp_body.scad>;
+use <deps/coord_kit/core.scad>;
 polygon(points_to_coords(_calculate_toe_clamp_body_points()));
 ```
 
@@ -75,7 +79,7 @@ Calculates the center x coordinate for the toe clamp body geometry based on the 
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <parts/toe_clamp_body.scad>;
+use <parts/toe_clamp_body.scad>;
 _calculate_center_x_toe_clamp_body(_calculate_toe_clamp_body_points());
 ```
 

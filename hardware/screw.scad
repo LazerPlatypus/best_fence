@@ -2,7 +2,7 @@
 // A simple screw for holding the Best Fence, used by the [attachment_screw](tools/attachment_screw.scad)
 //   This module creates a simple screw with a tapered head and no threads.
 // Includes:
-//   include <hardware/screw.scad>;
+//   use <hardware/screw.scad>;
 
 include <../config.scad>;
 
@@ -25,3 +25,5 @@ module screw() {
         cylinder(h = screw_shank_height, r = SCREW_SHANK_RADIUS, center = false);
     }
 }
+
+screw();

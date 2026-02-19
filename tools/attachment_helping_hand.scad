@@ -2,7 +2,7 @@
 // A model of the top of the "Helping Hand" attachment for the Best Fence,
 // which holds the mount from the bottom
 // Includes:
-//   include <tools/attachment_helping_hand.scad>;
+//   use <tools/attachment_helping_hand.scad>;
 
 include <../config.scad>;
 
@@ -19,3 +19,5 @@ module attachment_helping_hand() {
         center = false,
     );
 }
+
+attachment_helping_hand();
