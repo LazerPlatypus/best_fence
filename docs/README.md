@@ -8,7 +8,6 @@ This directory contains project documentation, including both hand-written guide
 
 - **[assembly_instructions.md](assembly_instructions.md)** - Step-by-step assembly guide
 - **[bom.md](bom.md)** - Bill of materials (parts and hardware)
-- **[design_notes.md](design_notes.md)** - Design decisions and considerations
 
 ### Generated Documentation
 
