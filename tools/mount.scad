@@ -53,8 +53,45 @@ module mount(num_channels=2, channel_spacing=20, mounting_face="BOTTOM") {
                                 plane = "Y", 
                             );
 
-                            // bolt & spring slot
-                            // TODO: bolt hole geometry
+                            // bolt slot
+                            translate(
+                                [
+                                    BEST_FENCE_INTERIOR_WIDTH +
+                                        (
+                                            BEST_FENCE_WALL_THICKNESS + TOE_CLAMP_BOTTOM_WIDTH + TOE_CLAMP_TOLERANCE_WIDTH
+                                        ) / 2,
+                                    channel_length / 2,
+                                    -1 * (BEST_FENCE_INTERIOR_HEIGHT + MOUNT_HEIGHT / 2),
+                                ]
+                            ) {
+                                cube(
+                                    [
+                                        BEST_FENCE_WALL_THICKNESS + TOE_CLAMP_BOTTOM_WIDTH + TOE_CLAMP_TOLERANCE_WIDTH,
+                                        BOLT_SHANK_RADIUS * 2,
+                                        MOUNT_HEIGHT + EPSILON,
+                                    ], center=true
+                                );
+                            }
+
+                            // spring slot
+                            translate(
+                                [
+                                    BEST_FENCE_INTERIOR_WIDTH +
+                                        (
+                                            BEST_FENCE_WALL_THICKNESS + TOE_CLAMP_BOTTOM_WIDTH + TOE_CLAMP_TOLERANCE_WIDTH
+                                        ) / 2,
+                                    channel_length / 2,
+                                    -1 * (BEST_FENCE_INTERIOR_HEIGHT + SPRING_HEIGHT / 2),
+                                ]
+                            ) {
+                                cube(
+                                    [
+                                        BEST_FENCE_WALL_THICKNESS + TOE_CLAMP_BOTTOM_WIDTH + TOE_CLAMP_TOLERANCE_WIDTH,
+                                        SPRING_RADIUS * 2,
+                                        SPRING_HEIGHT + EPSILON,
+                                    ], center=true
+                                );
+                            }
                         }
 
                         if ($children > 1) {

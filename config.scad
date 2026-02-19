@@ -56,6 +56,10 @@ BOLT_HEAD_HEIGHT = 5;
 BOLT_SHANK_RADIUS = 3.5;
 BOLT_SHANK_HEIGHT = 16;
 
+// spring dimensions
+SPRING_RADIUS = 6.5;
+SPRING_HEIGHT = 13;
+
 // screw mount dimensions
 SCREW_MOUNT_WIDTH = 32;
 SCREW_MOUNT_LENGTH = 32;
