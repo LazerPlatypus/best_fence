@@ -1,26 +1,26 @@
 # best_fence
 
-models to work with the best fence saw system
+3D-printable accessories for the Best Fence saw system.
 
 ## Overview
 
-best_fence is a design project for [detailed description of what this project creates].
+best_fence is an OpenSCAD design project that creates 3D-printable parts for working with the Best Fence woodworking measurement system.
 
 **Features:**
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- 3D-printable toe clamp system for securing the Best Fence to your workstation
+- Modular mount design supporting 1–10 channels with configurable spacing
+- Connectors for joining fence sections (butt connector) and mounting to saw horses
 
 ## Requirements
 
-- **OpenSCAD** 2021.01 or newer
+- **OpenSCAD** 2026.02.10 or newer
 - **Python 3** (for documentation generation, optional)
 - **openscad-docsgen** (installed via `make setup`)
 
 ## Quick Start
 
 ### 1. Preview
-Open `previews/preview_assembly.scad` in OpenSCAD and press F5 to preview the full assembly.
+Open any file in `parts/` or `assemblies/` in OpenSCAD and press F5 to preview.
 
 ### 2. Build
 ```bash
@@ -37,7 +37,10 @@ Edit parameters in `config.scad` to adjust dimensions and settings.
 make
 
 # Build specific part
-make build/stl/[part_name].stl
+make parts/butt_connector.scad build/stl/butt_connector.stl
+make parts/saw_horse_connector.scad build/stl/saw_horse_connector.stl
+make parts/toe_clamp_body.scad build/stl/toe_clamp_body.stl
+make parts/toe_clamp_insert.scad build/stl/toe_clamp_insert.stl
 
 # Generate documentation
 make docs
@@ -51,29 +54,32 @@ make clean
 
 ## File Organization
 
-- **[models/](models/)** - Source .scad files for each part
-- **[previews/](previews/)** - Quick preview files for development
+- **[parts/](parts/)** - Printable 3D part source files
+- **[assemblies/](assemblies/)** - Pre-configured assembly files for preview and export
+- **[tools/](tools/)** - Reusable mount and attachment modules
+- **[hardware/](hardware/)** - Hardware reference models (bolt, screw)
 - **[scripts/](scripts/)** - Build automation scripts
-- **[build/](build/)** - Generated STL files (run `make` to create)
+- **[build/](build/)** - Generated STL files and images (run `make` to create)
 - **[docs/](docs/)** - Documentation (hand-written + generated)
-- **[lib/](lib/)** - Project-specific helper functions (if needed)
 - **[config.scad](config.scad)** - Project-wide configuration
 
 ## Customization
 
 All project settings can be adjusted in `config.scad`:
-- Dimensions and sizing
-- Material thicknesses
-- Tolerances and fits
+- Best Fence dimensions and tolerances
+- Mount height and clearance
+- Toe clamp geometry and sizing
+- Hardware dimensions (bolt/screw)
 - Rendering quality ($fn settings)
-- Feature flags
 
 ## Parts List
 
-| Part | Quantity | Description |
-|------|----------|-------------|
-| [part_one] | 1 | [Description] |
-| [part_two] | 1 | [Description] |
+| Part | File | Description |
+|------|------|-------------|
+| Toe Clamp Body | `parts/toe_clamp_body.scad` | Main clamp body — print in TPU |
+| Toe Clamp Insert | `parts/toe_clamp_insert.scad` | Stiffening insert for clamp — print in PLA/PETG |
+| Butt Connector | `parts/butt_connector.scad` | Joins two fence sections end-to-end (2 channels) |
+| Saw Horse Connector | `parts/saw_horse_connector.scad` | Mounts fence on a saw horse (1 channel) |
 
 See [docs/bom.md](docs/bom.md) for complete bill of materials including hardware.
 
@@ -86,7 +92,6 @@ See [docs/assembly_instructions.md](docs/assembly_instructions.md) for step-by-s
 - **[API Reference](docs/api/)** - Generated API documentation
 - **[Assembly Instructions](docs/assembly_instructions.md)** - How to assemble the parts
 - **[Bill of Materials](docs/bom.md)** - Complete parts and hardware list
-- **[Design Notes](docs/design_notes.md)** - Design decisions and considerations
 
 ## Development
 
@@ -100,23 +105,31 @@ This creates a Python virtual environment and installs `openscad-docsgen` for do
 ### Project Structure
 ```
 best_fence/
-├── README.md                    # Project overview
-├── Makefile                     # Build automation
-├── config.scad                  # Project configuration
-├── .openscad_docsgen_rc         # Documentation config
-├── models/                      # Source .scad files
-│   ├── consts.scad             # Shared constants
-│   ├── part_one.scad
-│   └── part_two.scad
-├── previews/                    # Preview files
-│   └── preview_assembly.scad
-├── scripts/                     # Build scripts
-├── build/                       # Generated files (gitignored)
-│   ├── stl/                    # STL exports
-│   └── images/                 # Documentation renders
-├── docs/                        # Documentation
-│   └── api/                    # Generated API docs
-└── lib/                         # Project-specific helpers
+├── README.md                        # Project overview
+├── Makefile                         # Build automation
+├── config.scad                      # Project configuration
+├── .openscad_docsgen_rc             # Documentation config
+├── parts/                           # Printable part source files
+│   ├── toe_clamp_body.scad
+│   ├── toe_clamp_insert.scad
+│   ├── butt_connector.scad
+│   └── saw_horse_connector.scad
+├── assemblies/                      # Pre-configured assembly files
+│   ├── butt_connector.scad
+│   └── saw_horse_connector.scad
+├── tools/                           # Reusable mount/attachment modules
+│   ├── mount.scad
+│   ├── attachment_helping_hand.scad
+│   └── attachment_screw.scad
+├── hardware/                        # Hardware reference models
+│   ├── bolt.scad
+│   └── screw.scad
+├── scripts/                         # Build scripts
+├── build/                           # Generated files (gitignored)
+│   ├── stl/                        # STL exports
+│   └── images/                     # Documentation renders
+└── docs/                            # Documentation
+    └── api/                        # Generated API docs
 ```
 
 ## Exporting with Variable Overrides
@@ -124,14 +137,28 @@ best_fence/
 You can override variables from the command line:
 
 ```bash
-# Export with custom dimensions
-./scripts/export_part.sh models/part_one.scad build/stl/part_one_large.stl \
-    "WIDTH=100" "HEIGHT=60" "EXPORT_MODE=true"
+# Export with custom bolt radius
+./scripts/export_part.sh parts/toe_clamp_body.scad build/stl/toe_clamp_body.stl \
+    "BOLT_HEAD_RADIUS=8"
 
-# Export with different quality
-./scripts/export_part.sh models/part_one.scad build/stl/part_one_lowres.stl \
-    "EXPORT_FN=64" "EXPORT_MODE=true"
+# Export with lower resolution (faster)
+./scripts/export_part.sh parts/toe_clamp_body.scad build/stl/toe_clamp_body_lowres.stl \
+    "EXPORT_FN=16"
 ```
+
+
+## Contributing
+
+Contributions welcome! Please:
+1. Follow the [OpenSCAD Style Guide](https://github.com/LazerPlatypus/openscad_guide/)
+2. Document everything using [openscad_docsgen](https://github.com/BelfrySCAD/openscad_docsgen) format
+3. Test your changes before submitting
+4. Update documentation as needed
+
+## Support
+
+- **Issues:** [GitHub Issues](https://github.com/LazerPlatypus/best_fence/issues)
+- **Documentation:** [docs/](docs/)
 
 ## License
 
@@ -145,30 +172,7 @@ This project is licensed under the **CERN Open Hardware License Version 2 – St
 
 See [LICENSE](LICENSE) for full license text.
 
-## Contributing
-
-Contributions welcome! Please:
-1. Follow the [OpenSCAD Style Guide](https://github.com/LazerPlatypus/openscad_guide/)
-2. Document all public functions using openscad_docsgen format
-3. Test your changes before submitting
-4. Update documentation as needed
-
-## Support
-
-- **Issues:** [GitHub Issues](https://github.com/LazerPlatypus/best_fence/issues)
-- **Documentation:** [docs/](docs/)
-
 ---
 
 **Status:** Active development
 **Version:** 0.1.0 (pre-release)
-
-```
-
-Can you help me clean up this project @08_OpenSCAD/best_fence/ ?
-we need to work mostly on documentation. Most of it is from a template (which we will be updating after I'm happy with this project)
-
-Can you find all the .MD files that will need to be updated, then try to fill in what you can? if you are noto sure on something, make a file called "documentation_questions.md" in the root of the `best_fence` folder, with the name & path of the file, a link to the section (if applicable) and the question.
-
-You can ignore anything in the docs/api/ folder, as those are autogenerated
-```

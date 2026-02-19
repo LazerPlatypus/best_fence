@@ -19,8 +19,9 @@ This directory contains project documentation, including both hand-written guide
 ## Updating Documentation
 
 ### To update hand-written docs:
-1. Edit the markdown files directly in this directory
-2. Commit changes to version control
+1. Edit the scad files
+2. run `make docs`
+3. Commit changes to version control
 
 ### To regenerate API docs:
 ```bash
@@ -28,15 +29,17 @@ make docs
 ```
 
 This will scan all documented functions and modules in:
-- `lib/*.scad` (if present)
-- `parts/*.scad` (files with documentation comments)
+- `assemblies/*.scad`
+- `hardware/*.scad`
+- `parts/*.scad`
+- `tools/*.scad`
 
 ## Documentation Format
 
 Use openscad_docsgen format for documenting functions and modules:
 
 ```scad
-// Module: my_module()
+// Module: my_module
 // Usage:
 //   my_module(size);
 // Description:
@@ -59,9 +62,6 @@ Edit [assembly_instructions.md](assembly_instructions.md)
 
 ### For parts list:
 Edit [bom.md](bom.md)
-
-### For design notes:
-Edit [design_notes.md](design_notes.md)
 
 ### For code documentation:
 Add comments to your `.scad` files and run `make docs`
