@@ -1,4 +1,4 @@
-include <../models/butt_connector.scad>;
+include <../parts/butt_connector.scad>;
 
 butt_connector() {
     union() {

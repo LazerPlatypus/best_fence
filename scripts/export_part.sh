@@ -13,9 +13,9 @@ if [ -z "$INPUT" ] || [ -z "$OUTPUT" ]; then
     echo "Usage: $0 <input.scad> <output.stl> [VAR=value ...]"
     echo ""
     echo "Examples:"
-    echo "  $0 models/bracket.scad build/stl/bracket.stl"
-    echo "  $0 models/bracket.scad build/stl/bracket_large.stl \"WIDTH=100\" \"HEIGHT=60\""
-    echo "  $0 models/part.scad build/stl/part.stl \"EXPORT_MODE=true\" \"EXPORT_FN=256\""
+    echo "  $0 parts/bracket.scad build/stl/bracket.stl"
+    echo "  $0 parts/bracket.scad build/stl/bracket_large.stl \"WIDTH=100\" \"HEIGHT=60\""
+    echo "  $0 parts/part.scad build/stl/part.stl \"EXPORT_MODE=true\" \"EXPORT_FN=256\""
     exit 1
 fi
 

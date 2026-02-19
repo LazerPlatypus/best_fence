@@ -1,14 +1,15 @@
 // File: saw_horse_connector.scad
 //   A simple connector for attaching the Best Fence to a saw horse
 // Includes:
-//   include <models/saw_horse_connector.scad>;
+//   include <parts/saw_horse_connector.scad>;
 
-use <../libs/attachment_screw.scad>;
-use <../libs/bolt.scad>;
-use <../libs/mount.scad>;
-include <../config.scad>;
+use <../tools/attachment_screw.scad>;
+use <../tools/mount.scad>;
+use <../hardware/bolt.scad>;
 use <toe_clamp_body.scad>;
 use <toe_clamp_insert.scad>;
+
+include <../config.scad>;
 
 // Module: saw_horse_connector
 // Description: A simple connector for attaching the Best Fence to a saw horse

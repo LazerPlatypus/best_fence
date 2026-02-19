@@ -29,7 +29,7 @@ make docs
 
 This will scan all documented functions and modules in:
 - `lib/*.scad` (if present)
-- `models/*.scad` (files with documentation comments)
+- `parts/*.scad` (files with documentation comments)
 
 ## Documentation Format
 

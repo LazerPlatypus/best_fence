@@ -1,4 +1,4 @@
-include <../models/saw_horse_connector.scad>;
+include <../parts/saw_horse_connector.scad>;
 
 saw_horse_connector() {
     union() {

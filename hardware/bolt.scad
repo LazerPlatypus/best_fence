@@ -1,12 +1,12 @@
 // File: bolt.scad
-//  A simple bolt component for holding the Best Fence, used by the [toe_clamp_body](models/toe_clamp_body.scad)
+//  A simple bolt component for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)
 // Includes:
-//   include <libs/bolt.scad>;
+//   include <hardware/bolt.scad>;
 
 include <../config.scad>;
 
 // Module: bolt
-// Description: A simple bolt for holding the Best Fence, used by the [toe_clamp_body](models/toe_clamp_body.scad)
+// Description: A simple bolt for holding the Best Fence, used by the [toe_clamp_body](parts/toe_clamp_body.scad)
 //   This module creates a simple bolt with a hex head and no threads.
 // Example(3D,Render):
 //   bolt();

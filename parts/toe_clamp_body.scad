@@ -1,17 +1,17 @@
 // File: toe_clamp_body.scad
 //   A simple toe clamp component for holding the Best Fence
 // Includes:
-//   include <models/toe_clamp_body.scad>;
+//   include <parts/toe_clamp_body.scad>;
 
 use <../deps/coord_kit/core.scad>;
+use <../hardware/bolt.scad>;
+use <toe_clamp_insert.scad>;
 
 include <../config.scad>;
-use <../libs/bolt.scad>;
-use <toe_clamp_insert.scad>;
 
 // Module: toe_clamp_body
 // Description: A simple toe clamp for holding the Best Fence
-//   This module creates a simple toe clamp body that takes the [toe_clamp_insert](models/toe_clamp_insert.scad) and a bolt as children
+//   This module creates a simple toe clamp body that takes the [toe_clamp_insert](parts/toe_clamp_insert.scad) and a bolt as children
 //   This module is centered around 0,0,0, meaning all children should be centered about 0,0,0 as well.
 //   to secure the clamp to the fence. The clamp body is designed to fit snugly around the insert and provide a secure hold on the fence.
 //   it is recommended to make the body from a rubbery/grippy material like TPU

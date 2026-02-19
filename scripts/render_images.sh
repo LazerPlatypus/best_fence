@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Render documentation images from model files using OpenSCAD
-# Creates PNG images of all parts in models/ directory
+# Creates PNG images of all files in assemblies/ directory
 
 set -e
 
-PREVIEWS_DIR="previews"
+ASSEMBLIES_DIR="assemblies"
 OUTPUT_DIR="build/images"
 
 # Camera and image settings
@@ -17,9 +17,9 @@ if ! command -v openscad &> /dev/null; then
     exit 1
 fi
 
-# Check if models directory exists
-if [ ! -d "$PREVIEWS_DIR" ]; then
-    echo "❌ Models directory not found: $PREVIEWS_DIR"
+# Check if assemblies directory exists
+if [ ! -d "$ASSEMBLIES_DIR" ]; then
+    echo "❌ Assemblies directory not found: $ASSEMBLIES_DIR"
     exit 1
 fi
 
@@ -33,7 +33,7 @@ echo ""
 
 IMAGE_COUNT=0
 
-for scad_file in "$PREVIEWS_DIR"/*.scad; do
+for scad_file in "$ASSEMBLIES_DIR"/*.scad; do
     # Skip if no files found
     [ -f "$scad_file" ] || continue
 

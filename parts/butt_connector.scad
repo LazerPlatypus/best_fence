@@ -1,14 +1,15 @@
 // File: butt_connector.scad
 //   A simple connector for attaching two pieces of Best Fence together
 // Includes:
-//   include <models/butt_connector.scad>;
+//   include <parts/butt_connector.scad>;
 
-use <../libs/attachment_helping_hand.scad>;
-use <../libs/bolt.scad>;
-use <../libs/mount.scad>;
-include <../config.scad>;
+use <../tools/attachment_helping_hand.scad>;
+use <../tools/mount.scad>;
+use <../hardware/bolt.scad>;
 use <toe_clamp_body.scad>;
 use <toe_clamp_insert.scad>;
+
+include <../config.scad>;
 
 // Module: butt_connector
 // Description: A simple connector for attaching two pieces of Best Fence together

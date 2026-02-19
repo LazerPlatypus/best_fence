@@ -15,7 +15,7 @@ To use, add the following lines to the beginning of your file:
 **Description:** 
 
 A cylindar the same size as the head of the "Helping Hand"
-should be used as the first child of the [mount](models/mount.scad) module, with `mounting_face` set to "BOTTOM"
+should be used as the first child of the [mount](parts/mount.scad) module, with `mounting_face` set to "BOTTOM"
 derives its dimensions from the variables in config.scad
 
 **Example 1:** 

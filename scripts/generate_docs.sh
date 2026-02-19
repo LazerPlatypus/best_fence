@@ -6,8 +6,7 @@ set -e
 
 VENV_DIR=".venv"
 DOCS_DIR="docs/api"
-MODELS_DIR="models"
-LIB_DIR="libs"
+DIRS="hardware,parts,tools"
 
 # Find openscad-docsgen (venv first, then system)
 if [ -x "$VENV_DIR/bin/openscad-docsgen" ]; then
@@ -30,14 +29,11 @@ fi
 echo "Generating API documentation..."
 mkdir -p "$DOCS_DIR"
 
-# Add lib files if they exist
-if [ -d "$LIB_DIR" ] && ls "$LIB_DIR"/*.scad 1> /dev/null 2>&1; then
-    $DOCSGEN -m "$LIB_DIR"/*.scad --force
-fi
-
-# Add model files with documentation
-if [ -d "$MODELS_DIR" ] && ls "$MODELS_DIR"/*.scad 1> /dev/null 2>&1; then
-    $DOCSGEN -m "$MODELS_DIR"/*.scad --force
-fi
+IFS=',' read -ra DIR_LIST <<< "$DIRS"
+for dir in "${DIR_LIST[@]}"; do
+    if [ -d "$dir" ] && ls "$dir"/*.scad 1> /dev/null 2>&1; then
+        $DOCSGEN -m "$dir"/*.scad --force
+    fi
+done
 
 echo "✓ Documentation generated in $DOCS_DIR/"
