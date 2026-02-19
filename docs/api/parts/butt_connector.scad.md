@@ -4,7 +4,7 @@ A simple connector for attaching two pieces of Best Fence together
 
 To use, add the following lines to the beginning of your file:
 
-    include <models/butt_connector.scad>;
+    include <parts/butt_connector.scad>;
 
 ## File Contents
 
@@ -20,7 +20,7 @@ A simple connector for attaching two pieces of Best Fence together
 **Example 1:** Exported Geometry
 
 ``` {.C linenos=True}
-include <models/butt_connector.scad>;
+include <parts/butt_connector.scad>;
 butt_connector();
 ```
 
@@ -29,7 +29,7 @@ butt_connector();
 **Example 2:** Full Assembly
 
 ``` {.C linenos=True}
-include <models/butt_connector.scad>;
+include <parts/butt_connector.scad>;
 butt_connector() {
     union() {
         rotate([0, 0, 180]) {

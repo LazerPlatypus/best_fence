@@ -3,7 +3,7 @@
 
 To use, add the following lines to the beginning of your file:
 
-    include <libs/attachment_screw.scad>;
+    include <tools/attachment_screw.scad>;
 
 ## File Contents
 
@@ -22,7 +22,7 @@ This should be the first child of the [mount](parts/mount.scad) module with `mou
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <libs/attachment_screw.scad>;
+include <tools/attachment_screw.scad>;
 attachment_screw();
 ```
 
@@ -40,7 +40,7 @@ This module creates a simple screw with a tapered head and no threads.
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <libs/attachment_screw.scad>;
+include <tools/attachment_screw.scad>;
 screw();
 ```
 

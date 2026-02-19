@@ -3,7 +3,7 @@
 
 To use, add the following lines to the beginning of your file:
 
-    include <libs/attachment_helping_hand.scad>;
+    include <tools/attachment_helping_hand.scad>;
 
 ## File Contents
 
@@ -21,7 +21,7 @@ derives its dimensions from the variables in config.scad
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <libs/attachment_helping_hand.scad>;
+include <tools/attachment_helping_hand.scad>;
 attachment_helping_hand();
 ```
 

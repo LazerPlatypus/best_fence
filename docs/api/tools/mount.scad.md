@@ -5,7 +5,7 @@ It has slots for channels and a blind hole for a "helping hand" arm
 
 To use, add the following lines to the beginning of your file:
 
-    include <libs/mount.scad>;
+    include <tools/mount.scad>;
 
 ## File Contents
 
@@ -43,7 +43,7 @@ be duplicated in each `channel` slot.
 ![mount Example 1](images/mount/mount.png "mount Example 1")
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 mount(num_channels=1, channel_spacing=14, mounting_face="TOP");
 ```
 
@@ -52,7 +52,7 @@ mount(num_channels=1, channel_spacing=14, mounting_face="TOP");
 ![mount Example 2](images/mount/mount_2.png "mount Example 2")
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 mount(num_channels=2, channel_spacing=20, mounting_face="BOTTOM");
 ```
 
@@ -78,7 +78,7 @@ Validates the arguments passed to mount() and throws an error if any are invalid
 **Example 1:** Valid arguments
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 // valid
 _validate_args_mount(2, 20, "BOTTOM");
 ```
@@ -86,7 +86,7 @@ _validate_args_mount(2, 20, "BOTTOM");
 **Example 2:** Invalid `num_channels`
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 _validate_args_mount(0, 20, "BOTTOM");
 // throws error "Invalid num_channels value. Must be between 1 and 10."
 ```
@@ -94,7 +94,7 @@ _validate_args_mount(0, 20, "BOTTOM");
 **Example 3:** Invalid `channel_spacing`
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 _validate_args_mount(2, -5, "BOTTOM");
 // throws error "Invalid channel_spacing value. Must be greater than 0."
 ```
@@ -102,7 +102,7 @@ _validate_args_mount(2, -5, "BOTTOM");
 **Example 4:** Invalid `mounting_face`
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 _validate_args_mount(2, 20, "SIDE");
 // throws error "Invalid mounting_face value. Allowed values: 'TOP', 'BOTTOM'."
 ```
@@ -121,7 +121,7 @@ Calculates the points for the support geometry based on global variables
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 polygon(points_to_coords(_calculate_support_points()));
 ```
 
@@ -141,7 +141,7 @@ Calculates the points for the channel geometry based on global variables
 **Example 1:** 
 
 ``` {.C linenos=True}
-include <libs/mount.scad>;
+include <tools/mount.scad>;
 polygon(points_to_coords(_calculate_channel_points()));
 ```
 
